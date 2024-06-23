@@ -1,0 +1,236 @@
+﻿body {
+    background-color: #230312;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.content-wrapper {
+    flex: 1;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.look {
+    background-image: url('/cocktails.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 180px 0 30px 0;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    background-color: #FF6347;
+    padding: 40px;
+    margin-bottom: 22px;
+    box-shadow: 0 15px 15px -15px rgba(0, 0, 0, 0.25) inset, 0 -15px 15px -15px rgba(0, 0, 0, 0.25) inset;
+}
+
+    .look form {
+        position: relative;
+        width: 100%;
+        max-width: 540px;
+        margin: 67px auto 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        .look form input[type="text"] {
+            flex: 1;
+            padding: 15px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            border-radius: 4px;
+            margin-bottom: 10px;
+            margin: 0 auto;
+        }
+
+        .look form input[type="submit"] {
+            padding: 10px 25px;
+            background-color: #8b4513;
+            color: #fff;
+            border: transparent solid 1px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+            .look form input[type="submit"]:hover {
+                background-color: #a0522d;
+                transform: translateY(-3px);
+                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            }
+
+
+.Button {
+    text-shadow: none;
+    border: transparent solid 1px;
+    border-radius: 3px;
+    background-color: #FF6347;
+    background-image: linear-gradient(#FF6347, #E67E00);
+    color: white;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+    .Button:hover {
+        background-color: #E67E00;
+        transform: translateY(-3px); /* Lift effect */
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .look {
+        padding: 100px 0 20px 0;
+    }
+
+        .look form input[type="text"] {
+            padding: 10px 15px;
+            width: calc(100% - 100px);
+        }
+
+        .look form input[type="submit"] {
+            padding: 8px 20px;
+        }
+
+    .Button {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .look {
+        padding: 80px 0 15px 0;
+    }
+
+        .look form input[type="text"] {
+            padding: 8px 10px;
+            width: calc(100% - 80px);
+        }
+
+        .look form input[type="submit"] {
+            padding: 6px 15px;
+        }
+
+    .Button {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+}
+
+/*============================================================*/
+/* Styles for results */
+.cocktail-result h4 {
+    color: #FB9900;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.cocktail-result p {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 3px;
+    margin-bottom: 12px;
+    margin-left: 17px;
+    margin-right: 17px;
+}
+
+.word-cloud {
+    margin-top: 10px;
+    border: 4px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 10px;
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+    .word-cloud span {
+        margin-right: 10px;
+        margin-bottom: 5px;
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 3px;
+        background-color: #FB9900;
+        color: #fff;
+        font-size: 14px;
+    }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cocktail-result h4 {
+        font-size: 20px;
+    }
+
+    .cocktail-result p {
+        font-size: 14px;
+    }
+
+    .word-cloud {
+        padding: 8px;
+    }
+
+        .word-cloud span {
+            font-size: 12px;
+            padding: 2px 6px;
+        }
+}
+
+@media (max-width: 480px) {
+    .cocktail-result h4 {
+        font-size: 18px;
+    }
+
+    .cocktail-result p {
+        font-size: 12px;
+    }
+
+    .word-cloud {
+        padding: 6px;
+    }
+
+        .word-cloud span {
+            font-size: 10px;
+            padding: 1px 4px;
+        }
+}
+
+.results {
+    margin-left: 24px;
+    margin-right: 24px;
+}
+/*============================================================*/
+
+.cocktail-not-found {
+    color: #FF6347; /* Reddish color */
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer {
+    height: 50px;
+    background-color: #1D000D;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}

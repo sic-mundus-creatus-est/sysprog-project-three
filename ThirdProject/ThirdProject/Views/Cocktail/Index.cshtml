@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <title>sysprog-project-three</title>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="look">
+            <div class="container">
+                <form method="post" asp-controller="Cocktail" asp-action="Search" class="search-form">
+                    <input type="text" name="cocktailName" placeholder="Enter cocktail name..." required class="InputBox" autocomplete="off">
+                    <button type="submit" class="Button">Search</button>
+                </form>
+            </div>
+        </div>
+
+        @if (ViewBag.Cocktails != null && ViewBag.Cocktails.Count > 0)
+        {
+                <div class="results">
+                @foreach (var cocktail in ViewBag.Cocktails)
+                {
+                            <div class="cocktail-result">
+                                <h4>@cocktail.Name</h4>
+                                <p>• @cocktail.Instructions</p>
+
+                                <div class="word-cloud">
+
+                                @if (cocktail.WordCloud != null && cocktail.WordCloud.Count > 0)
+                                {
+                                    @foreach (var word in cocktail.WordCloud)
+                                    {
+                                                            <span style="font-size: @(word.Value * 10)px;">@word.Key (@word.Value)</span>
+                                    }
+                                }
+                                else
+                                {
+                                                    <p>No word cloud available for this cocktail.</p>
+                                }
+
+                                </div>
+                            </div>
+                }
+                </div>
+        }
+        else if (ViewBag.Cocktails == null)
+        {
+                <p class="cocktail-not-found">Cocktail not found.</p>
+        }
+    </div>
+
+    <footer>
+        <p>
+            &copy; 2024 •
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="color: #FF6347; text-decoration: none;">
+                <strong><i>sysprog-project-three</i></strong>
+            </a> 
+            • 18859
+        </p>
+    </footer>
+</body>
+</html>
